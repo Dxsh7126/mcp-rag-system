@@ -4,7 +4,7 @@ This is a project that uses multiple tools such as search_docs and calculator to
 
 ## What I Built
 
-2-3 sentences explaining:
+
 - The system is an agent that answers queries from the document provided.
 - It works using RAG (retrieval augmented generation) and uses the concept of MCPs. A server is created which holds the tools and the client access those tools based on the query requested by the user.
 - Tech used are,
@@ -19,12 +19,14 @@ This is a project that uses multiple tools such as search_docs and calculator to
 
 ## Architecture
 
-Explain the two main files:
+
 - [mcp_server.py] is the server of the MCP, it contains the different tools that are used by the client. It contains the chunking logic where the document is chunked to smaller pieces for easier and faster processing. Two tools are created, search_docs and calculator, the client can access these tools.
 - [mcp_client.py] is the client side of the MCP, it runs the MCP server. The developer configures which servers to connect to and the agent sees which tools are available to it from the server. It asks each configured server to list the tools. The complete list of the tools are returned and the tools that are required for the task is used and final output is returned.
 
 
-Architecture of how the converstation works between the client and server.
+Architecture of how the conversation works between the client and server.
+
+```
 ┌─────────────────┐          ┌─────────────────┐
 │     CLIENT      │          │      Server     │
 │  (your agent)   │          │  (tool provider)│
@@ -40,6 +42,7 @@ Architecture of how the converstation works between the client and server.
 │                 │  result  │                 │
 │  4. Get result  │◄─────────┤  returns answer │
 └─────────────────┘          └─────────────────┘
+```
 
 
 ## Key Concepts Used
@@ -61,8 +64,8 @@ The key concepts used to create this project are as follows,
 
 ## Example
 
+```
 Enter query: What are the disadvantages of Three tier architecture?
-
 
 The disadvantages of Three-tier architecture are:
 
@@ -70,5 +73,4 @@ The disadvantages of Three-tier architecture are:
 2. Complexity to manage
 3. Security challenges
 4. Point of failure
-
-Note: The response from the search function provides information on the disadvantages of Three-tier architecture, as well as other related concepts in distributed computing.
+```
