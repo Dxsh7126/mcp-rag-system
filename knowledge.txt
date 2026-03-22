@@ -1,0 +1,124 @@
+Distributed computing
+
+Refers to a system where multiple computers work together to solve a problem or perform tasks.
+
+Tasks are divided into smaller subtasks and each subtask is solved simultaneously.
+
+
+Key features of distributed computing->
+
+Decentralization-> No single point of control
+Scalability -> Easily add more machines
+Fault tolerance -> System continue to work even if some machines fail
+
+Resouce sharing -> Share data and resources across systems.
+
+
+
+Components of distributed computing architecture->
+
+Client-> End to End user that uses the service provided
+Server-> Provides the service to the clients
+Middleware-> This is the connective layer that connects the client and server to communicate
+Network-> Helps in data transfer
+
+
+Client server architecture-> 
+
+Centralized server for resource management
+Clients act as the interface for users
+
+Advantages are,
+Easy management and maintenance
+Centralized security control
+
+Disadvantages are,
+Single point of failure
+Scalability challenges
+
+
+Peer to Peer architecture(P2P)->
+
+Decentralized system both the client and the server act like nodes
+
+Advantages are,
+No single point of failure
+Highly scalable
+
+Disadvantages are,
+Complex to manage
+Security challenges
+
+
+Three tier architecture-> 
+
+Presentation layer-> User interface
+Application layer-> Business logic
+Data layer-> Database management
+
+Advantages are,
+Modular and reusable
+Easier to scale specific layers
+
+Disadvantages are,
+Increased complexity
+
+
+Service Oriented Architecture->
+
+Services are loosely coupled and reusable
+Communication via standard protocols (HTTP,REST)
+
+Advantages are,
+High flexibility
+Supports diverse platforms
+
+Disadvantages are,
+Overhead in communication
+Dependency on middleware
+
+
+Middleware in distributed systems->
+
+Middleware acts as a bridge between the client and the server.
+
+Functions include,
+
+Data translation
+Load balancing
+Authenticity and security
+
+
+
+Challenges in distributed computing architecture->
+
+Concurrency-> Managing multiple simultaneous processes
+Fault tolerance-> Ensuring reliability despite failure
+Security-> Protecting data across systems
+Scalability-> Handling increased load efficiently
+Latency-> Reducing delays in communication
+
+
+
+Types of cloud services (cloud models)->
+
+IaaS(Infrastructure as a Service)-> VMs storage like AWS EC2
+
+IaaS delivers on demand infrastructure resources to organizations via the cloud, such as compute, storage, networking. Customers dont have to manage, maintain or update their own data center infrastructure but are responsible for the operating system, middleware and VM. 
+
+
+Paas(Platform as a Service)-> Development platforms like Google App engine
+
+PaaS delivers and manages all the software and hardware resources to develop applications through the cloud. Developers and IT operations team can use PaaS to develop, run and manage applications without having to manage the infrastructure or platform on their own. The developers do have to write their own code and manage the data and applications. 
+
+
+SaaS(Service as a Service)-> Ready to use software like gmail.
+
+SaaS provides the entire application stack delivering complete cloud based applications that customers can access and use. SaaS products are completely managed and developed by the service providers. All the bugs and issues are patched and fixed by the service providers. Most SaaS applications do not require the user to install anything on their system and can use the application directly from the browser.
+
+
+
+CaaS(Containers as a Service)-> 
+
+
+CaaS delivers and manages all the software and hardware resources to develop and deploy applications using containers. CaaS is also known as the subset or an extension of IaaS, CaaS uses containers instead of VMs as its main resource. Developers can use CaaS to run and manage applications without having to build the entire infrastructure and maintain it. Customers still have to write their own code and applications but the environment to deploy the containers is done by the sevice providers.
