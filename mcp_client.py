@@ -13,22 +13,22 @@ user_query = input("Enter query: ")
 messages = [{"role":"user","content":user_query}]
 
 async def main():
-    # 1. Define how to connect to your server, a note that tells what to do, preparation
+    # Define how to connect to your server, a note that tells what to do, preparation
     server_params = StdioServerParameters(
         command="python",
         args=["mcp_server.py"]    # runs your server as a subprocess
     )
     
-    # 2. Connect to the server, 
+    # Connect to the server, 
     async with stdio_client(server_params) as (read, write): # "Start the server and give me a way to talk to it" Launches mcp_server.py with 2 pipes read and write
         async with ClientSession(read, write) as session:  #ClientSession wraps the read/write into something easier to use
             await session.initialize() # Like a handshake, "Hey Server, Im here lets talk"
             
-            # 3. Discover tools automatically!
+            # Discover tools automatically!
             tools_result = await session.list_tools() # What tools do u have?
             print("Available tools:", [t.name for t in tools_result.tools])
             tools_lst=[]
-            # 4. MCP tools format of what Groq expects
+            # MCP tools format of what Groq expects
             for t in tools_result.tools:
                 tools_lst.append({
                     "type":"function",
@@ -39,7 +39,7 @@ async def main():
                         }
                 })
             
-            # 5. Agent loop (same as your agent.py!)
+            # Agent loop
             print("Tools being sent:", json.dumps(tools_lst, indent=2))
             while True:
                 response = client_groq.chat.completions.create(
@@ -58,7 +58,7 @@ async def main():
                     result_text = result.content[0].text
                     messages.append({"role":"tool","tool_call_id":message.tool_calls[0].id,"content":result_text})
             #    But instead of calling Python functions directly,
-            #    you call: await session.call_tool(tool_name, arguments)
+            #    we call: await session.call_tool(tool_name, arguments)
                 else:
                     print(message.content)
                     break
